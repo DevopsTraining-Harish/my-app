@@ -3,7 +3,7 @@ pipeline {
   label 'jenkins-master'
          }
 options {
-  timestamps
+  timestamps()
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '2', numToKeepStr: '3')
 }
 
