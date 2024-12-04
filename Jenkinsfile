@@ -6,15 +6,14 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-		mvn compile
+		sh 'mvn compile'
             }
         }
         
         
         stage('Junit') {
             steps {
-
-		mvn test
+			sh 'mvn test'
                   }
         }
         
