@@ -6,14 +6,14 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-		sh 'mvn compile'
+		powershell 'mvn compile'
             }
         }
         
         
         stage('Junit') {
             steps {
-			sh 'mvn test'
+		powershell 'mvn compile'
                   }
         }
         
