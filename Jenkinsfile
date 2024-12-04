@@ -13,7 +13,7 @@ pipeline {
         
         stage('Junit') {
             steps {
-		powershell 'mvn compile'
+		bat 'mvn test'
                   }
         }
         
