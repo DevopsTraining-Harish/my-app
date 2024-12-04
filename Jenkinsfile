@@ -4,17 +4,18 @@ pipeline {
          }
  
     stages {
-        stage('checkout code from SCM') {
+        stage('Compile') {
             steps {
-                git branch: 'feature1', url: 'git@github.com:DevopsTraining-Harish/my-app.git'
+		mvn compile
             }
         }
         
         
-        stage('test') {
+        stage('Junit') {
             steps {
-                echo 'test steps'
-            }
+
+		mvn test
+                  }
         }
         
         
