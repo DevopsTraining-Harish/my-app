@@ -16,11 +16,20 @@ pipeline {
 		bat 'mvn test'
                   }
         }
-        
-        
-        stage('deploy') {
+        stage('Package') {
             steps {
-                echo 'deploy steps'
+		bat 'mvn -DskipTests clean package'
+                  }
+        }
+
+        stage('Upload package into Nexus') {
+            steps {
+		bat 'mvn -DskipTests deploy'
+                  }
+        }        
+        stage('Cleanup Workspace') {
+            steps {
+                cleanWs()
             }
         }
     }
