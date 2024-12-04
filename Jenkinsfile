@@ -2,8 +2,7 @@ pipeline {
     agent {
   label 'jenkins-master'
          }
-   #agent  any
-
+ 
     stages {
         stage('checkout code from SCM') {
             steps {
